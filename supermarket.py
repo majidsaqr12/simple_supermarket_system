@@ -2,6 +2,7 @@ import random
 from tkinter import *
 from tkinter import messagebox
 from openpyxl import load_workbook
+# -*- coding: UTF-8 -*-
 
 
 class supermarket:
@@ -37,9 +38,6 @@ class supermarket:
         self.s13 = IntVar()
         self.s14 = IntVar()
         self.s15 = IntVar()
-        self.s16 = IntVar()
-        self.s17 = IntVar()
-        self.s18 = IntVar()
 
         # =========== V section 2 ========
         self.ss1 = IntVar()
@@ -57,9 +55,6 @@ class supermarket:
         self.ss13 = IntVar()
         self.ss14 = IntVar()
         self.ss15 = IntVar()
-        self.ss16 = IntVar()
-        self.ss17 = IntVar()
-        self.ss18 = IntVar()
 
         # =========== V section 3 ========
         self.sss1 = IntVar()
@@ -102,11 +97,11 @@ class supermarket:
         En_bill = Entry(F1, textvariable=self.bill, justify='center')
         En_bill.place(x=104, y=100)
 
-        btn_cust = Button(F1, text='search', font=('tajawal', 10), width=17, height=1, bg='gold', fg='black')
+        btn_cust = Button(F1, text='search', font=('tajawal', 10), width=17, height=1, bg='silver', fg='black')
         btn_cust.place(x=104, y=130)
 
         # ==============BILL=================#
-        F2 = Frame(root, bd=2, width=309, height=320, bg='white')
+        F2 = Frame(root, bd=2, width=309, height=320, bg='silver')
         F2.place(x=938, y=205)
         scrol_y = Scrollbar(F2, orient=VERTICAL)
         self.txtarea = Text(F2, yscrollcommand=scrol_y.set)
@@ -117,21 +112,21 @@ class supermarket:
         # ===============PRICE=================#
         F3 = Frame(root, bd=2, width=605, height=130, bg='#0B4C5f')
         F3.place(x=642, y=558)
-        total = Button(F3, text='TOTAL', width=8, height=1, fg='black', bg='gold', font=('tajawal', 10),
+        total = Button(F3, text='TOTAL', width=8, height=1, fg='black', bg='silver', font=('tajawal', 10),
                        command=self.total)
         total.place(x=500, y=5)
-        bill = Button(F3, text='EXPORT', width=8, height=1, fg='black', bg='gold', font=('tajawal', 10),
+        bill = Button(F3, text='EXPORT', width=8, height=1, fg='black', bg='silver', font=('tajawal', 10),
                       command=self.billl)
         bill.place(x=500, y=44)
-        clear = Button(F3, text='CLEAR', width=8, height=1, fg='black', bg='gold', font=('tajawal', 10),
+        clear = Button(F3, text='CLEAR', width=8, height=1, fg='black', bg='silver', font=('tajawal', 10),
                        command=self.clear)
         clear.place(x=500, y=83)
 
-        txt2 = Label(F3, text='Section 1', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='gold')
+        txt2 = Label(F3, text='Section 1', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='silver')
         txt2.place(x=5, y=10)
-        txt3 = Label(F3, text='Section 2', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='gold')
+        txt3 = Label(F3, text='Section 2', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='silver')
         txt3.place(x=5, y=50)
-        txt4 = Label(F3, text='Section 3', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='gold')
+        txt4 = Label(F3, text='Section 3', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='silver')
         txt4.place(x=5, y=90)
 
         En_1 = Entry(F3, textvariable=self.section1, width=24, justify='center')
@@ -144,12 +139,12 @@ class supermarket:
         # ===================ITems[1]=====================
         F4 = Frame(root, width=318, height=660, bg='#0B4C5f')
         F4.place(x=1, y=31)
-        text4 = Label(F4, text='Section 1', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='gold')
-        text4.place(x=108, y=0)
+        text4 = Label(F4, text="( Juices and frozen )", font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='silver')
+        text4.place(x=60, y=0)
 
-        l1 = Label(F4, text='Element 1', font=('tajawal', 12), bg='#0B4C5f', fg='white')
+        l1 = Label(F4, text='Burger', font=('tajawal', 12), bg='#0B4C5f', fg='white')
         l1.place(x=10, y=50)
-        l2 = Label(F4, text='Element 2', font=('tajawal', 12), bg='#0B4C5f', fg='white')
+        l2 = Label(F4, text='Mozzarella', font=('tajawal', 12), bg='#0B4C5f', fg='white')
         l2.place(x=10, y=95)
         l3 = Label(F4, text='Element 3', font=('tajawal', 12), bg='#0B4C5f', fg='white')
         l3.place(x=10, y=140)
@@ -182,287 +177,439 @@ class supermarket:
         lEnt1 = Entry(F4, textvariable=self.s1, width=12, justify='center')
         lEnt1.place(x=105, y=50)
 
-        blusS1 = Button(F4, text="+", width=1, bd=3, bg="gold", activebackground="silver", command=self.addS1)
-        blusS1.place(x=270, y=45)
+        lBlus1 = Button(F4, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addS1)
+        lBlus1.place(x=270, y=45)
 
-        minS1 = Button(F4, text="-", width=1, bd=3, bg="gold",activebackground="silver",  command=self.subS1)
-        minS1.place(x=220, y=45)
+        lMin1 = Button(F4, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subS1)
+        lMin1.place(x=220, y=45)
 
         lEnt2 = Entry(F4, textvariable=self.s2, width=12, justify='center')
         lEnt2.place(x=105, y=95)
 
-        blusS2 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS2)
-        blusS2.place(x=270, y=90)
+        lBlus2 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS2)
+        lBlus2.place(x=270, y=90)
 
-        minS2 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS2)
-        minS2.place(x=220, y=90)
+        lMin2 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS2)
+        lMin2.place(x=220, y=90)
 
         lEnt3 = Entry(F4, textvariable=self.s3, width=12, justify='center')
         lEnt3.place(x=105, y=140)
 
-        blusS3 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS3)
-        blusS3.place(x=270, y=133)
+        lBlus3 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS3)
+        lBlus3.place(x=270, y=133)
 
-        minS3 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS3)
-        minS3.place(x=220, y=133)
+        lMin3 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS3)
+        lMin3.place(x=220, y=133)
 
         lEnt4 = Entry(F4, textvariable=self.s4, width=12, justify='center')
         lEnt4.place(x=105, y=178)
 
-        blusS4 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS4)
-        blusS4.place(x=270, y=175)
+        lBlus4 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS4)
+        lBlus4.place(x=270, y=175)
 
-        minS4 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS4)
-        minS4.place(x=220, y=175)
+        lMin4 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS4)
+        lMin4.place(x=220, y=175)
 
         lEnt5 = Entry(F4, textvariable=self.s5, width=12, justify='center')
         lEnt5.place(x=105, y=220)
 
-        blusS5 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS5)
-        blusS5.place(x=270, y=215)
+        lBlus5 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS5)
+        lBlus5.place(x=270, y=215)
 
-        minS5 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS5)
-        minS5.place(x=220, y=215)
+        lMin5 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS5)
+        lMin5.place(x=220, y=215)
 
         lEnt6 = Entry(F4, textvariable=self.s6, width=12, justify='center')
         lEnt6.place(x=105, y=260)
 
-        blusS6 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS6)
-        blusS6.place(x=270, y=255)
+        lBlus6 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS6)
+        lBlus6.place(x=270, y=255)
 
-        minS6 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS6)
-        minS6.place(x=220, y=255)
+        lMin6 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS6)
+        lMin6.place(x=220, y=255)
 
         lEnt7 = Entry(F4, textvariable=self.s7, width=12, justify='center')
         lEnt7.place(x=105, y=305)
 
-        blusS7 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS7)
-        blusS7.place(x=270, y=298)
+        lBlus7 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS7)
+        lBlus7.place(x=270, y=298)
 
-        minS7 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS7)
-        minS7.place(x=220, y=298)
+        lMin7 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS7)
+        lMin7.place(x=220, y=298)
 
         lEnt8 = Entry(F4, textvariable=self.s8, width=12, justify='center')
         lEnt8.place(x=105, y=345)
 
-        blusS8 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS8)
-        blusS8.place(x=270, y=340)
+        lBlus8 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS8)
+        lBlus8.place(x=270, y=340)
 
-        minS8 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS8)
-        minS8.place(x=220, y=340)
+        lMin8 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS8)
+        lMin8.place(x=220, y=340)
 
         lEnt9 = Entry(F4, textvariable=self.s9, width=12, justify='center')
         lEnt9.place(x=105, y=385)
 
-        blusS9 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS9)
-        blusS9.place(x=270, y=380)
+        lBlus9 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS9)
+        lBlus9.place(x=270, y=380)
 
-        minS9 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS9)
-        minS9.place(x=220, y=380)
+        lMin9 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS9)
+        lMin9.place(x=220, y=380)
 
         lEnt10 = Entry(F4, textvariable=self.s10, width=12, justify='center')
         lEnt10.place(x=105, y=425)
 
-        blusS10 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS10)
-        blusS10.place(x=270, y=420)
+        lBlus10 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS10)
+        lBlus10.place(x=270, y=420)
 
-        minS10 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS10)
-        minS10.place(x=220, y=420)
+        lMin10 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS10)
+        lMin10.place(x=220, y=420)
 
         lEnt11 = Entry(F4, textvariable=self.s11, width=12, justify='center')
         lEnt11.place(x=105, y=465)
 
-        blusS11 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS1)
-        blusS11.place(x=270, y=460)
+        lBlus11 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS11)
+        lBlus11.place(x=270, y=460)
 
-        minS11 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS1)
-        minS11.place(x=220, y=460)
+        lMin11 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS11)
+        lMin11.place(x=220, y=460)
 
         lEnt12 = Entry(F4, textvariable=self.s12, width=12, justify='center')
         lEnt12.place(x=105, y=505)
 
-        blusS12 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS1)
-        blusS12.place(x=270, y=500)
+        lBlus12 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS12)
+        lBlus12.place(x=270, y=500)
 
-        minS12 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS1)
-        minS12.place(x=220, y=500)
+        lMin12 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS12)
+        lMin12.place(x=220, y=500)
 
         lEnt13 = Entry(F4, textvariable=self.s13, width=12, justify='center')
         lEnt13.place(x=105, y=545)
 
-        blusS13 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS1)
-        blusS13.place(x=270, y=540)
+        lBlus13 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS13)
+        lBlus13.place(x=270, y=540)
 
-        minS13 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS1)
-        minS13.place(x=220, y=540)
+        lMin13 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS13)
+        lMin13.place(x=220, y=540)
 
         lEnt14 = Entry(F4, textvariable=self.s14, width=12, justify='center')
         lEnt14.place(x=105, y=585)
 
-        blusS14 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS1)
-        blusS14.place(x=270, y=580)
+        lBlus14 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS14)
+        lBlus14.place(x=270, y=580)
 
-        minS14 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS1)
-        minS14.place(x=220, y=580)
+        lMin14 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS14)
+        lMin14.place(x=220, y=580)
 
         lEnt15 = Entry(F4, textvariable=self.s15, width=12, justify='center')
         lEnt15.place(x=105, y=625)
 
-        blusS15 = Button(F4, text="+", width=1, bd=3, bg="gold", command=self.addS1)
-        blusS15.place(x=270, y=620)
+        lBlus15 = Button(F4, text="+", width=1, bd=3, bg="silver", command=self.addS15)
+        lBlus15.place(x=270, y=620)
 
-        minS15 = Button(F4, text="-", width=1, bd=3, bg="gold", command=self.subS1)
-        minS15.place(x=220, y=620)
+        lMin15 = Button(F4, text="-", width=1, bd=3, bg="silver", command=self.subS15)
+        lMin15.place(x=220, y=620)
 
         # ==========Items[2]=========================
         F5 = Frame(root, width=320, height=660, bg='#0B4C5f')
         F5.place(x=320, y=31)
-        text5 = Label(F5, text='Section 2', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='gold')
+        text5 = Label(F5, text='Section 2', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='silver')
         text5.place(x=110, y=0)
 
         h1 = Label(F5, text='Element 1', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h1.place(x=20, y=50)
+        h1.place(x=10, y=50)
         h2 = Label(F5, text='Element 2', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h2.place(x=20, y=80)
+        h2.place(x=10, y=95)
         h3 = Label(F5, text='Element 3', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h3.place(x=20, y=110)
+        h3.place(x=10, y=140)
         h4 = Label(F5, text='Element 4', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h4.place(x=20, y=140)
+        h4.place(x=10, y=178)
         h5 = Label(F5, text='Element 5', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h5.place(x=20, y=170)
+        h5.place(x=10, y=220)
         h6 = Label(F5, text='Element 6', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h6.place(x=20, y=200)
+        h6.place(x=10, y=260)
         h7 = Label(F5, text='Element 7', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h7.place(x=20, y=230)
+        h7.place(x=10, y=305)
         h8 = Label(F5, text='Element 8', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h8.place(x=20, y=260)
+        h8.place(x=10, y=345)
         h9 = Label(F5, text='Element 9', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h9.place(x=20, y=290)
-        h10 = Label(F5, text='Element 10', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h10.place(x=20, y=320)
-        h11 = Label(F5, text='Element 11', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h11.place(x=20, y=350)
-        h12 = Label(F5, text='Element 12', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h12.place(x=20, y=380)
-        h13 = Label(F5, text='Element 13', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h13.place(x=20, y=410)
-        h14 = Label(F5, text='Element 14', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h14.place(x=20, y=515)
-        h15 = Label(F5, text='Element 15', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h15.place(x=20, y=470)
-        h16 = Label(F5, text='Element 16', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h16.place(x=20, y=500)
-        h17 = Label(F5, text='Element 17', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h17.place(x=20, y=530)
-        h18 = Label(F5, text='Element 18', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        h18.place(x=20, y=560)
+        h9.place(x=10, y=385)
+        h10 = Label(F5, text='Element 1', font=('tajawal', 12), bg='#0B4C5f', fg='white')
+        h10.place(x=10, y=425)
+        h11 = Label(F5, text='Element 2', font=('tajawal', 12), bg='#0B4C5f', fg='white')
+        h11.place(x=10, y=465)
+        h12 = Label(F5, text='Element 3', font=('tajawal', 12), bg='#0B4C5f', fg='white')
+        h12.place(x=10, y=505)
+        h13 = Label(F5, text='Element 4', font=('tajawal', 12), bg='#0B4C5f', fg='white')
+        h13.place(x=10, y=545)
+        h14 = Label(F5, text='Element 5', font=('tajawal', 12), bg='#0B4C5f', fg='white')
+        h14.place(x=10, y=586)
+        h15 = Label(F5, text='Element 6', font=('tajawal', 12), bg='#0B4C5f', fg='white')
+        h15.place(x=10, y=625)
 
         # Button
         hEnt1 = Entry(F5, textvariable=self.ss1, width=12, justify='center')
-        hEnt1.place(x=150, y=50)
+        hEnt1.place(x=105, y=50)
+
+        hBlus1 = Button(F5, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSS1)
+        hBlus1.place(x=270, y=45)
+
+        hMin1 = Button(F5, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSS1)
+        hMin1.place(x=220, y=45)
+
         hEnt2 = Entry(F5, textvariable=self.ss2, width=12, justify='center')
-        hEnt2.place(x=150, y=80)
+        hEnt2.place(x=105, y=95)
+
+        hBlus2 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS2)
+        hBlus2.place(x=270, y=90)
+
+        hMin2 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS2)
+        hMin2.place(x=220, y=90)
+
         hEnt3 = Entry(F5, textvariable=self.ss3, width=12, justify='center')
-        hEnt3.place(x=150, y=110)
+        hEnt3.place(x=105, y=140)
+
+        hBlus3 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS3)
+        hBlus3.place(x=270, y=133)
+
+        hMin3 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS3)
+        hMin3.place(x=220, y=133)
+
         hEnt4 = Entry(F5, textvariable=self.ss4, width=12, justify='center')
-        hEnt4.place(x=150, y=140)
+        hEnt4.place(x=105, y=178)
+
+        hBlus4 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS4)
+        hBlus4.place(x=270, y=175)
+
+        hMin4 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS4)
+        hMin4.place(x=220, y=175)
+
         hEnt5 = Entry(F5, textvariable=self.ss5, width=12, justify='center')
-        hEnt5.place(x=150, y=170)
+        hEnt5.place(x=105, y=220)
+
+        hBlus5 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS5)
+        hBlus5.place(x=270, y=215)
+
+        hMin5 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS5)
+        hMin5.place(x=220, y=215)
+
         hEnt6 = Entry(F5, textvariable=self.ss6, width=12, justify='center')
-        hEnt6.place(x=150, y=200)
+        hEnt6.place(x=105, y=260)
+
+        hBlus6 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS6)
+        hBlus6.place(x=270, y=255)
+
+        hMin6 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS6)
+        hMin6.place(x=220, y=255)
+
         hEnt7 = Entry(F5, textvariable=self.ss7, width=12, justify='center')
-        hEnt7.place(x=150, y=230)
+        hEnt7.place(x=105, y=305)
+
+        hBlus7 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS7)
+        hBlus7.place(x=270, y=298)
+
+        hMin7 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS7)
+        hMin7.place(x=220, y=298)
+
         hEnt8 = Entry(F5, textvariable=self.ss8, width=12, justify='center')
-        hEnt8.place(x=150, y=260)
+        hEnt8.place(x=105, y=345)
+
+        hBlus8 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS8)
+        hBlus8.place(x=270, y=340)
+
+        hMin8 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS8)
+        hMin8.place(x=220, y=340)
+
         hEnt9 = Entry(F5, textvariable=self.ss9, width=12, justify='center')
-        hEnt9.place(x=150, y=290)
+        hEnt9.place(x=105, y=385)
+
+        hBlus9 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS9)
+        hBlus9.place(x=270, y=380)
+
+        hMin9 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS9)
+        hMin9.place(x=220, y=380)
+
         hEnt10 = Entry(F5, textvariable=self.ss10, width=12, justify='center')
-        hEnt10.place(x=150, y=320)
+        hEnt10.place(x=105, y=425)
+
+        hBlus10 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS10)
+        hBlus10.place(x=270, y=420)
+
+        hMin10 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS10)
+        hMin10.place(x=220, y=420)
+
         hEnt11 = Entry(F5, textvariable=self.ss11, width=12, justify='center')
-        hEnt11.place(x=150, y=350)
+        hEnt11.place(x=105, y=465)
+
+        hBlus11 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS11)
+        hBlus11.place(x=270, y=460)
+
+        hMin11 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS11)
+        hMin11.place(x=220, y=460)
+
         hEnt12 = Entry(F5, textvariable=self.ss12, width=12, justify='center')
-        hEnt12.place(x=150, y=380)
+        hEnt12.place(x=105, y=505)
+
+        hBlus12 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS12)
+        hBlus12.place(x=270, y=500)
+
+        hMin12 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS12)
+        hMin12.place(x=220, y=500)
+
         hEnt13 = Entry(F5, textvariable=self.ss13, width=12, justify='center')
-        hEnt13.place(x=150, y=410)
+        hEnt13.place(x=105, y=545)
+
+        hBlus13 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS13)
+        hBlus13.place(x=270, y=540)
+
+        hMin13 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS13)
+        hMin13.place(x=220, y=540)
+
         hEnt14 = Entry(F5, textvariable=self.ss14, width=12, justify='center')
-        hEnt14.place(x=150, y=440)
+        hEnt14.place(x=105, y=585)
+
+        hBlus14 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS14)
+        hBlus14.place(x=270, y=580)
+
+        hMin14 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS14)
+        hMin14.place(x=220, y=580)
+
         hEnt15 = Entry(F5, textvariable=self.ss15, width=12, justify='center')
-        hEnt15.place(x=150, y=470)
-        hEnt16 = Entry(F5, textvariable=self.ss16, width=12, justify='center')
-        hEnt16.place(x=150, y=500)
-        hEnt17 = Entry(F5, textvariable=self.ss17, width=12, justify='center')
-        hEnt17.place(x=150, y=530)
-        hEnt18 = Entry(F5, textvariable=self.ss18, width=12, justify='center')
-        hEnt18.place(x=150, y=560)
+        hEnt15.place(x=105, y=625)
+
+        hBlus15 = Button(F5, text="+", width=1, bd=3, bg="silver", command=self.addSS15)
+        hBlus15.place(x=270, y=620)
+
+        hMin15 = Button(F5, text="-", width=1, bd=3, bg="silver", command=self.subSS15)
+        hMin15.place(x=220, y=620)
 
         # =============ITEMS[3]============================
         F6 = Frame(root, width=295, height=525, bg='#0B4C5f')
         F6.place(x=642, y=31)
-        text6 = Label(F6, text='Section 3', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='gold')
+        text6 = Label(F6, text='Section 3', font=('tajawal', 15, 'bold'), bg='#0B4C5f', fg='silver')
         text6.place(x=110, y=0)
 
         e1 = Label(F6, text='Element 1', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e1.place(x=20, y=50)
+        e1.place(x=5, y=50)
         e2 = Label(F6, text='Element 2', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e2.place(x=20, y=80)
+        e2.place(x=5, y=95)
         e3 = Label(F6, text='Element 3', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e3.place(x=20, y=110)
+        e3.place(x=5, y=140)
         e4 = Label(F6, text='Element 4', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e4.place(x=20, y=140)
+        e4.place(x=5, y=178)
         e5 = Label(F6, text='Element 5', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e5.place(x=20, y=170)
+        e5.place(x=5, y=220)
         e6 = Label(F6, text='Element 6', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e6.place(x=20, y=200)
+        e6.place(x=5, y=260)
         e7 = Label(F6, text='Element 7', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e7.place(x=20, y=230)
+        e7.place(x=5, y=305)
         e8 = Label(F6, text='Element 8', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e8.place(x=20, y=260)
+        e8.place(x=5, y=345)
         e9 = Label(F6, text='Element 9', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e9.place(x=20, y=290)
-        e10 = Label(F6, text='Element 10', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e10.place(x=20, y=320)
-        e11 = Label(F6, text='Element 11', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e11.place(x=20, y=350)
-        e12 = Label(F6, text='Element 12', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e12.place(x=20, y=380)
-        e13 = Label(F6, text='Element 13', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e13.place(x=20, y=410)
-        e14 = Label(F6, text='Element 14', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e14.place(x=20, y=440)
-        e15 = Label(F6, text='Element 15', font=('tajawal', 12), bg='#0B4C5f', fg='white')
-        e15.place(x=20, y=470)
+        e9.place(x=5, y=385)
+        e10 = Label(F6, text='Element 1', font=('tajawal', 12), bg='#0B4C5f', fg='white')
+        e10.place(x=5, y=425)
+        e11 = Label(F6, text='Element 2', font=('tajawal', 12), bg='#0B4C5f', fg='white')
+        e11.place(x=5, y=465)
 
         # Button
         eEnt1 = Entry(F6, textvariable=self.sss1, width=12, justify='center')
-        eEnt1.place(x=150, y=50)
+        eEnt1.place(x=95, y=50)
+
+        eBlus1 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS1)
+        eBlus1.place(x=250, y=45)
+
+        eMin1 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS1)
+        eMin1.place(x=205, y=45)
+
         eEnt2 = Entry(F6, textvariable=self.sss2, width=12, justify='center')
-        eEnt2.place(x=150, y=80)
+        eEnt2.place(x=95, y=95)
+
+        eBlus2 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS2)
+        eBlus2.place(x=250, y=90)
+
+        eMin2 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS2)
+        eMin2.place(x=205, y=90)
+
         eEnt3 = Entry(F6, textvariable=self.sss3, width=12, justify='center')
-        eEnt3.place(x=150, y=110)
+        eEnt3.place(x=95, y=140)
+
+        eBlus3 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS3)
+        eBlus3.place(x=250, y=135)
+
+        eMin3 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS3)
+        eMin3.place(x=205, y=135)
+
         eEnt4 = Entry(F6, textvariable=self.sss4, width=12, justify='center')
-        eEnt4.place(x=150, y=140)
+        eEnt4.place(x=95, y=178)
+
+        eBlus4 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS4)
+        eBlus4.place(x=250, y=175)
+
+        eMin4 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS4)
+        eMin4.place(x=205, y=175)
+
         eEnt5 = Entry(F6, textvariable=self.sss5, width=12, justify='center')
-        eEnt5.place(x=150, y=170)
+        eEnt5.place(x=95, y=220)
+
+        eBlus5 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS5)
+        eBlus5.place(x=250, y=215)
+
+        eMin5 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS5)
+        eMin5.place(x=205, y=215)
+
         eEnt6 = Entry(F6, textvariable=self.sss6, width=12, justify='center')
-        eEnt6.place(x=150, y=200)
+        eEnt6.place(x=95, y=260)
+
+        eBlus6 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS6)
+        eBlus6.place(x=250, y=255)
+
+        eMin6 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS6)
+        eMin6.place(x=205, y=255)
+
         eEnt7 = Entry(F6, textvariable=self.sss7, width=12, justify='center')
-        eEnt7.place(x=150, y=230)
+        eEnt7.place(x=95, y=305)
+
+        eBlus7 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS7)
+        eBlus7.place(x=250, y=300)
+
+        eMin7 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS7)
+        eMin7.place(x=205, y=300)
+
         eEnt8 = Entry(F6, textvariable=self.sss8, width=12, justify='center')
-        eEnt8.place(x=150, y=260)
+        eEnt8.place(x=95, y=345)
+
+        eBlus8 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS8)
+        eBlus8.place(x=250, y=340)
+
+        eMin8 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS8)
+        eMin8.place(x=205, y=340)
+
         eEnt9 = Entry(F6, textvariable=self.sss9, width=12, justify='center')
-        eEnt9.place(x=150, y=290)
+        eEnt9.place(x=95, y=385)
+
+        eBlus9 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS9)
+        eBlus9.place(x=250, y=380)
+
+        eMin9 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS9)
+        eMin9.place(x=205, y=380)
+
         eEnt10 = Entry(F6, textvariable=self.sss10, width=12, justify='center')
-        eEnt10.place(x=150, y=320)
+        eEnt10.place(x=95, y=425)
+
+        eBlus10 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS10)
+        eBlus10.place(x=250, y=420)
+
+        eMin10 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS10)
+        eMin10.place(x=205, y=420)
+
         eEnt11 = Entry(F6, textvariable=self.sss11, width=12, justify='center')
-        eEnt11.place(x=150, y=350)
-        eEnt12 = Entry(F6, textvariable=self.sss12, width=12, justify='center')
-        eEnt12.place(x=150, y=380)
-        eEnt13 = Entry(F6, textvariable=self.sss13, width=12, justify='center')
-        eEnt13.place(x=150, y=410)
-        eEnt14 = Entry(F6, textvariable=self.sss14, width=12, justify='center')
-        eEnt14.place(x=150, y=440)
-        eEnt15 = Entry(F6, textvariable=self.sss15, width=12, justify='center')
-        eEnt15.place(x=150, y=470)
+        eEnt11.place(x=95, y=465)
+
+        eBlus11 = Button(F6, text="+", width=1, bd=3, bg="silver", activebackground="silver", command=self.addSSS11)
+        eBlus11.place(x=250, y=460)
+
+        eMin11 = Button(F6, text="-", width=1, bd=3, bg="silver", activebackground="silver", command=self.subSSS11)
+        eMin11.place(x=205, y=460)
 
         self.welcome()
 
@@ -482,9 +629,6 @@ class supermarket:
         self.ts13 = self.s13.get() * 1.5
         self.ts14 = self.s14.get() * 2
         self.ts15 = self.s15.get() * 1.5
-        self.ts16 = self.s16.get() * 2
-        self.ts17 = self.s17.get() * 1.5
-        self.ts18 = self.s18.get() * 2
 
         self.tsec1 = float(
             self.ts1 +
@@ -501,10 +645,7 @@ class supermarket:
             self.ts12 +
             self.ts13 +
             self.ts14 +
-            self.ts15 +
-            self.ts16 +
-            self.ts17 +
-            self.ts18
+            self.ts15
         )
         self.section1.set(str(self.tsec1) + " $ ")
 
@@ -523,9 +664,6 @@ class supermarket:
         self.tss13 = self.ss13.get() * 1.5
         self.tss14 = self.ss14.get() * 2
         self.tss15 = self.ss15.get() * 1.5
-        self.tss16 = self.ss16.get() * 2
-        self.tss17 = self.ss17.get() * 1.5
-        self.tss18 = self.ss18.get() * 2
 
         self.tsec2 = float(
             self.tss1 +
@@ -542,10 +680,7 @@ class supermarket:
             self.tss12 +
             self.tss13 +
             self.tss14 +
-            self.tss15 +
-            self.tss16 +
-            self.tss17 +
-            self.tss18
+            self.tss15
         )
         self.section2.set(str(self.tsec2) + " $ ")
 
@@ -560,10 +695,6 @@ class supermarket:
         self.tsss9 = self.sss9.get() * 1.5
         self.tsss10 = self.sss10.get() * 2
         self.tsss11 = self.sss11.get() * 1.5
-        self.tsss12 = self.sss12.get() * 2
-        self.tsss13 = self.sss13.get() * 1.5
-        self.tsss14 = self.sss14.get() * 2
-        self.tsss15 = self.sss15.get() * 1.5
         self.tsec3 = float(
             self.tsss1 +
             self.tsss2 +
@@ -575,11 +706,7 @@ class supermarket:
             self.tsss8 +
             self.tsss9 +
             self.tsss10 +
-            self.tsss11 +
-            self.tsss12 +
-            self.tsss13 +
-            self.tsss14 +
-            self.tsss15
+            self.tsss11
         )
         self.section3.set(str(self.tsec3) + " $ ")
         self.all = float(self.tsec1 + self.tsec2 + self.tsec3)
@@ -611,9 +738,6 @@ class supermarket:
         self.s13.set(0)
         self.s14.set(0)
         self.s15.set(0)
-        self.s16.set(0)
-        self.s17.set(0)
-        self.s18.set(0)
 
         self.ss1.set(0)
         self.ss2.set(0)
@@ -630,9 +754,6 @@ class supermarket:
         self.ss13.set(0)
         self.ss14.set(0)
         self.ss15.set(0)
-        self.ss16.set(0)
-        self.ss17.set(0)
-        self.ss18.set(0)
 
         self.sss1.set(0)
         self.sss2.set(0)
@@ -719,15 +840,6 @@ class supermarket:
         if self.s15.get() != 0:
             self.txtarea.insert(END, f"\n {self.ts15}\t\t{self.s15.get()}\t\tElement15 ")
 
-        if self.s16.get() != 0:
-            self.txtarea.insert(END, f"\n {self.ts16}\t\t{self.s16.get()}\t\tElement16 ")
-
-        if self.s17.get() != 0:
-            self.txtarea.insert(END, f"\n {self.ts17}\t\t{self.s17.get()}\t\tElement17 ")
-
-        if self.s18.get() != 0:
-            self.txtarea.insert(END, f"\n {self.ts18}\t\t{self.s18.get()}\t\tElement18 ")
-
         if self.ss1.get() != 0:
             self.txtarea.insert(END, f"\n {self.tss1}\t\t{self.ss1.get()}\t\tElement1 ")
 
@@ -776,15 +888,6 @@ class supermarket:
         if self.ss15.get() != 0:
             self.txtarea.insert(END, f"\n {self.tss15}\t\t{self.ss15.get()}\t\tElement15 ")
 
-        if self.ss16.get() != 0:
-            self.txtarea.insert(END, f"\n {self.tss16}\t\t{self.ss16.get()}\t\tElement16 ")
-
-        if self.ss17.get() != 0:
-            self.txtarea.insert(END, f"\n {self.tss17}\t\t{self.ss17.get()}\t\tElement17 ")
-
-        if self.ss18.get() != 0:
-            self.txtarea.insert(END, f"\n {self.tss18}\t\t{self.ss18.get()}\t\tElement18 ")
-
         if self.sss1.get() != 0:
             self.txtarea.insert(END, f"\n {self.tsss1}\t\t{self.sss1.get()}\t\tElement1 ")
 
@@ -818,24 +921,12 @@ class supermarket:
         if self.sss11.get() != 0:
             self.txtarea.insert(END, f"\n {self.tsss11}\t\t{self.sss11.get()}\t\tElement11 ")
 
-        if self.sss12.get() != 0:
-            self.txtarea.insert(END, f"\n {self.tsss12}\t\t{self.sss12.get()}\t\tElement12 ")
-
-        if self.sss13.get() != 0:
-            self.txtarea.insert(END, f"\n {self.tsss13}\t\t{self.sss13.get()}\t\tElement13 ")
-
-        if self.sss14.get() != 0:
-            self.txtarea.insert(END, f"\n {self.tsss14}\t\t{self.sss14.get()}\t\tElement14 ")
-
-        if self.sss15.get() != 0:
-            self.txtarea.insert(END, f"\n {self.tsss15}\t\t{self.sss9.get()}\t\tElement15 ")
-
         self.txtarea.insert(END, "\n.......................................")
         self.txtarea.insert(END, f"\nTotal Price $\t             {self.all}")
         self.txtarea.insert(END, "\n.......................................")
         self.save()
 
-    # ( ADD & MIN )
+    # ( FUNCTIONS ADD & MIN SECTION 1)
     def addS1(self):
         value = self.s1.get()
         value = value + 1
@@ -985,6 +1076,431 @@ class supermarket:
         if value > 0:
             value = value - 1
         self.s10.set(value)
+
+    def addS11(self):
+        value = self.s11.get()
+        value = value + 1
+        self.s11.set(value)
+
+    def subS11(self):
+        value = self.s11.get()
+        if value > 0:
+            value = value - 1
+        self.s11.set(value)
+
+    def addS12(self):
+        value = self.s12.get()
+        value = value + 1
+        self.s12.set(value)
+
+    def subS12(self):
+        value = self.s12.get()
+        if value > 0:
+            value = value - 1
+        self.s12.set(value)
+
+    def addS13(self):
+        value = self.s13.get()
+        value = value + 1
+        self.s13.set(value)
+
+    def subS13(self):
+        value = self.s13.get()
+        if value > 0:
+            value = value - 1
+        self.s13.set(value)
+
+    def addS14(self):
+        value = self.s14.get()
+        value = value + 1
+        self.s14.set(value)
+
+    def subS14(self):
+        value = self.s14.get()
+        if value > 0:
+            value = value - 1
+        self.s14.set(value)
+
+    def addS15(self):
+        value = self.s15.get()
+        value = value + 1
+        self.s15.set(value)
+
+    def subS15(self):
+        value = self.s15.get()
+        if value > 0:
+            value = value - 1
+        self.s15.set(value)
+
+    # ( FUNCTIONS ADD & MIN SECTION 2 )
+
+    def addSS1(self):
+        value = self.ss1.get()
+        value = value + 1
+        self.ss1.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A1'] = value
+        wb.save("sample_file.xlsx")
+
+    def subSS1(self):
+        value = self.ss1.get()
+        if value > 0:
+            value = value - 1
+        self.ss1.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A1'] = value
+        wb.save("sample_file.xlsx")
+
+    def addSS2(self):
+        value = self.ss2.get()
+        value = value + 1
+        self.ss2.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A2'] = value
+        wb.save("sample_file.xlsx")
+
+    def subSS2(self):
+        value = self.ss2.get()
+        if value > 0:
+            value = value - 1
+        self.ss2.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A2'] = value
+        wb.save("sample_file.xlsx")
+
+    def addSS3(self):
+        value = self.ss3.get()
+        value = value + 1
+        self.ss3.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A3'] = value
+        wb.save("sample_file.xlsx")
+
+    def subSS3(self):
+        value = self.ss3.get()
+        if value > 0:
+            value = value - 1
+        self.ss3.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A3'] = value
+        wb.save("sample_file.xlsx")
+
+    def addSS4(self):
+        value = self.ss4.get()
+        value = value + 1
+        self.ss4.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A4'] = value
+        wb.save("sample_file.xlsx")
+
+    def subSS4(self):
+        value = self.ss4.get()
+        if value > 0:
+            value = value - 1
+        self.ss4.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A4'] = value
+        wb.save("sample_file.xlsx")
+
+    def addSS5(self):
+        value = self.ss5.get()
+        value = value + 1
+        self.ss5.set(value)
+
+    def subSS5(self):
+        value = self.ss5.get()
+        if value > 0:
+            value = value - 1
+        self.ss5.set(value)
+
+    def addSS6(self):
+        value = self.ss6.get()
+        value = value + 1
+        self.ss6.set(value)
+
+    def subSS6(self):
+        value = self.ss6.get()
+        if value > 0:
+            value = value - 1
+        self.ss6.set(value)
+
+    def addSS7(self):
+        value = self.ss7.get()
+        value = value + 1
+        self.ss7.set(value)
+
+    def subSS7(self):
+        value = self.ss7.get()
+        if value > 0:
+            value = value - 1
+        self.ss7.set(value)
+
+    def addSS8(self):
+        value = self.ss8.get()
+        value = value + 1
+        self.ss8.set(value)
+
+    def subSS8(self):
+        value = self.ss8.get()
+        if value > 0:
+            value = value - 1
+        self.ss8.set(value)
+
+    def addSS9(self):
+        value = self.ss9.get()
+        value = value + 1
+        self.ss9.set(value)
+
+    def subSS9(self):
+        value = self.ss9.get()
+        if value > 0:
+            value = value - 1
+        self.ss9.set(value)
+
+    def addSS10(self):
+        value = self.ss10.get()
+        value = value + 1
+        self.ss10.set(value)
+
+    def subSS10(self):
+        value = self.ss10.get()
+        if value > 0:
+            value = value - 1
+        self.ss10.set(value)
+
+    def addSS11(self):
+        value = self.ss11.get()
+        value = value + 1
+        self.ss11.set(value)
+
+    def subSS11(self):
+        value = self.ss11.get()
+        if value > 0:
+            value = value - 1
+        self.ss11.set(value)
+
+    def addSS12(self):
+        value = self.ss12.get()
+        value = value + 1
+        self.ss12.set(value)
+
+    def subSS12(self):
+        value = self.ss12.get()
+        if value > 0:
+            value = value - 1
+        self.ss12.set(value)
+
+    def addSS13(self):
+        value = self.ss13.get()
+        value = value + 1
+        self.ss13.set(value)
+
+    def subSS13(self):
+        value = self.ss13.get()
+        if value > 0:
+            value = value - 1
+        self.ss13.set(value)
+
+    def addSS14(self):
+        value = self.ss14.get()
+        value = value + 1
+        self.ss14.set(value)
+
+    def subSS14(self):
+        value = self.ss14.get()
+        if value > 0:
+            value = value - 1
+        self.ss14.set(value)
+
+    def addSS15(self):
+        value = self.ss15.get()
+        value = value + 1
+        self.ss15.set(value)
+
+    def subSS15(self):
+        value = self.s15.get()
+        if value > 0:
+            value = value - 1
+        self.ss15.set(value)
+
+    # ( FUNCTIONS ADD & MIN SECTION 3 )
+
+    def addSSS1(self):
+        value = self.sss1.get()
+        value = value + 1
+        self.sss1.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A1'] = value
+        wb.save("sample_file.xlsx")
+
+    def subSSS1(self):
+        value = self.sss1.get()
+        if value > 0:
+            value = value - 1
+        self.sss1.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A1'] = value
+        wb.save("sample_file.xlsx")
+
+    def addSSS2(self):
+        value = self.sss2.get()
+        value = value + 1
+        self.sss2.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A2'] = value
+        wb.save("sample_file.xlsx")
+
+    def subSSS2(self):
+        value = self.sss2.get()
+        if value > 0:
+            value = value - 1
+        self.sss2.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A2'] = value
+        wb.save("sample_file.xlsx")
+
+    def addSSS3(self):
+        value = self.sss3.get()
+        value = value + 1
+        self.sss3.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A3'] = value
+        wb.save("sample_file.xlsx")
+
+    def subSSS3(self):
+        value = self.sss3.get()
+        if value > 0:
+            value = value - 1
+        self.sss3.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A3'] = value
+        wb.save("sample_file.xlsx")
+
+    def addSSS4(self):
+        value = self.sss4.get()
+        value = value + 1
+        self.sss4.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A4'] = value
+        wb.save("sample_file.xlsx")
+
+    def subSSS4(self):
+        value = self.sss4.get()
+        if value > 0:
+            value = value - 1
+        self.sss4.set(value)
+        wb = load_workbook("sample_file.xlsx")
+        sheet = wb.active
+
+        sheet['A4'] = value
+        wb.save("sample_file.xlsx")
+
+    def addSSS5(self):
+        value = self.sss5.get()
+        value = value + 1
+        self.sss5.set(value)
+
+    def subSSS5(self):
+        value = self.sss5.get()
+        if value > 0:
+            value = value - 1
+        self.sss5.set(value)
+
+    def addSSS6(self):
+        value = self.sss6.get()
+        value = value + 1
+        self.sss6.set(value)
+
+    def subSSS6(self):
+        value = self.sss6.get()
+        if value > 0:
+            value = value - 1
+        self.sss6.set(value)
+
+    def addSSS7(self):
+        value = self.sss7.get()
+        value = value + 1
+        self.sss7.set(value)
+
+    def subSSS7(self):
+        value = self.sss7.get()
+        if value > 0:
+            value = value - 1
+        self.sss7.set(value)
+
+    def addSSS8(self):
+        value = self.sss8.get()
+        value = value + 1
+        self.sss8.set(value)
+
+    def subSSS8(self):
+        value = self.sss8.get()
+        if value > 0:
+            value = value - 1
+        self.sss8.set(value)
+
+    def addSSS9(self):
+        value = self.sss9.get()
+        value = value + 1
+        self.sss9.set(value)
+
+    def subSSS9(self):
+        value = self.sss9.get()
+        if value > 0:
+            value = value - 1
+        self.sss9.set(value)
+
+    def addSSS10(self):
+        value = self.sss10.get()
+        value = value + 1
+        self.sss10.set(value)
+
+    def subSSS10(self):
+        value = self.sss10.get()
+        if value > 0:
+            value = value - 1
+        self.sss10.set(value)
+
+    def addSSS11(self):
+        value = self.sss11.get()
+        value = value + 1
+        self.sss11.set(value)
+
+    def subSSS11(self):
+        value = self.sss11.get()
+        if value > 0:
+            value = value - 1
+        self.sss11.set(value)
 
 
 root = Tk()
